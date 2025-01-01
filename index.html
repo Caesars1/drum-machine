@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drum Machine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+      function play(letter) {
+        const audio = document.getElementById(letter);
+        audio.play();
+        let soundName = "Now playing: " + document.getElementById(letter).src;
+        document.getElementById("display").innerHTML = soundName;
+      }
+      window.document.onkeyup = function(event) {
+        let note = event.key;
+        switch(note) {
+          case "q", "Q":
+            play("Q")
+            break;
+          case "w", "W":
+            play("W")
+            break;
+          case "e", "E":
+            play("E")
+            break;
+          case "a", "A":
+            play("A")
+            break;
+          case "s", "S":
+            play("S")
+            break;
+          case "d", "D":
+            play("D")
+            break;
+          case "z", "Z":
+            play("Z")
+            break;
+          case "x", "X":
+            play("X")
+            break;
+          case "c", "C":
+            play("C")
+            break;
+          default:
+            // code block
+        }
+      }
+    </script>
+  </head>
+  <body>
+
+    <h1 class="text-center">Drum Machine</h1>
+    
+    <div class="container" id="drum-machine">
+      <div class="card my-3">
+        <div class="card-body">
+          <div class="text-center" id="display">Press a key and play an instrument.</div>
+        </div>
+      </div>
+
+      <div class="container mx-auto">
+        <button class="drum-pad btn btn-success btn-lg p-4 m-4" id="sound-0" onclick="play('Q')">
+          <audio src="./sounds/Cev_H2.mp3" class="clip" id="Q"></audio>Q
+        </button>
+        <button class="drum-pad btn btn-success btn-lg  p-4 m-4" id="sound-1" onclick="play('W')">
+          <audio src="./sounds/Dsc_Oh.mp3" class="clip" id="W"></audio>W
+        </button>
+        <button class="drum-pad btn btn-success btn-lg  p-4 m-4" id="sound-2" onclick="play('E')">
+          <audio src="./sounds/Heater-1.mp3" class="clip" id="E"></audio>E
+        </button>
+      </div>
+      
+      <div class="container">
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-3" onclick="play('A')">
+          <audio src="./sounds/Heater-2.mp3" class="clip" id="A"></audio>A
+        </button>
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-4" onclick="play('S')">
+          <audio src="./sounds/Heater-3.mp3" class="clip" id="S"></audio>S
+        </button>
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-5" onclick="play('D')">
+          <audio src="./sounds/Heater-4_1.mp3" class="clip" id="D"></audio>D
+        </button>
+      </div>
+      
+
+      <div class="container">
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-6" onclick="play('Z')">
+          <audio src="./sounds/Heater-6.mp3" class="clip" id="Z"></audio>Z
+        </button>
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-7" onclick="play('X')">
+          <audio src="./sounds/Kick_n_Hat.mp3" class="clip" id="X"></audio>X
+        </button>
+        <button class="drum-pad btn btn-success  btn-lg  p-4 m-4" id="sound-8" onclick="play('C')">
+          <audio src="./sounds/RP4_KICK_1.mp3" class="clip" id="C"></audio>C
+        </button>
+      </div>
+      
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
